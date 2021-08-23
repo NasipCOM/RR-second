@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+    background-color: #222;
+}
+
+.content{
+    padding-top: 50px;
+    padding-left: 100px;
+    color: bisque;
+    width: 70%;
+}
+.active{
+    color: chocolate;
+}
+
+/* .wrapper {} */
