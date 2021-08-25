@@ -8,7 +8,10 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import About from '../About/About';
 import Blog from '../Blog/Blog';
 
-const App = () => {
+const App = (props) => {
+
+    const { posts, messages, dialogs } = props;
+
     return (
         <BrowserRouter>
             <div className="wrapper">
@@ -16,9 +19,9 @@ const App = () => {
                 <div className="flex">
                     <Navbar />
                     <div className='content'>
-                        <Route exact path='/' component={Home} />
-                        <Route path='/about' component={About} />
-                        <Route path='/blog' component={Blog} />
+                        <Route exact path='/' render={() => <Home />} />
+                        <Route path='/about' render={() => <About posts={posts} />} />
+                        <Route path='/blog' render={() => <Blog messages={messages} dialogs={dialogs} />} />
                     </div>
                 </div>
             </div>
