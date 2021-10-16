@@ -9,8 +9,8 @@ import About from '../About/About';
 import Blog from '../Blog/Blog';
 
 const App = (props) => {
-
-    const { posts, messages, dialogs } = props;
+    console.log(props)
+    const { profilePage, messagesPage } = props.state;
 
     return (
         <BrowserRouter>
@@ -20,8 +20,8 @@ const App = (props) => {
                     <Navbar />
                     <div className='content'>
                         <Route exact path='/' render={() => <Home />} />
-                        <Route path='/about' render={() => <About posts={posts} />} />
-                        <Route path='/blog' render={() => <Blog messages={messages} dialogs={dialogs} />} />
+                        <Route path='/about' render={() => <About posts={profilePage.posts} />} />
+                        <Route path='/blog' render={() => <Blog messages={messagesPage.messages} dialogs={profilePage.dialogs} />} />
                     </div>
                 </div>
             </div>
